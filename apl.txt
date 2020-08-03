@@ -1,0 +1,28 @@
+ALTER TABLE people AUTO_INCREMENT=1000;
+
+INSERT INTO `program`(`prog_id`, `program_name`, `program_release`, `program_version`) VALUES ('$prog_id','$program_name','$program_release','$program_version')
+
+
+INSERT INTO `program`( `program_name`, `program_release`, `program_version`) VALUES ($program_name,$program_release,$program_version)
+
+
+
+
+
+
+<?php
+$prog_id = (isset($_POST['prog_id']) ? $_POST['prog_id'] : '');
+$program_name = (isset($_POST['program_name']) ? $_POST['program_name'] : '');
+$program_release = (isset($_POST['program_release']) ? $_POST['program_release'] : '');
+$program_version = (isset($_POST['program_version']) ? $_POST['program_version'] : '');
+
+$connect=mysqli_connect('localhost','root',null,'bughound');
+ 
+if(mysqli_connect_errno($connect))
+{
+        echo 'Failed to connect';
+}
+$query="UPDATE `program` SET `prog_id`='$prog_id',`program_name`='$program_name',`program_release`='$program_release',`program_version`='$program_version' WHERE `prog_id`='$prog_id'";
+mysqli_query($connect,$query);
+
+?>

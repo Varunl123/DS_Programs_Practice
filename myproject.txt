@@ -1,0 +1,32 @@
+
+
+<?php
+$firstname = $username = $pass = $userlevel ="";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $firstname = $_POST["name"];
+  $username = $_POST["username"];
+  $pass = $_POST["password"];
+  $userlevel = $_POST["userlevel"];
+}
+else{
+    echo "Error". "in post method";
+}
+
+$dbname = 'bughound';
+
+// Create connection
+// Check connection
+$con = mysqli_connect('localhost','root');
+mysqli_select_db($con, $dbname);
+$sql = "INSERT INTO employee (name,username,password,level) VALUES ($firstname,$username,$pass,$userlevel)";
+echo $sql;
+mysqli_query($con,$sql);
+/*if ($con->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $con->error;
+}
+*/
+$con->close();
+?>

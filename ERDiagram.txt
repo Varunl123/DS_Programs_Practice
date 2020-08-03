@@ -1,0 +1,50 @@
+CREATE TABLE `User` (
+  `User Id` <type>,
+  `First Name` <type>,
+  `Last Name` <type>
+);
+
+CREATE TABLE `Area` (
+  `Area Id` <type>,
+  `program Id` <type>,
+  `Funcation Area` <type>
+);
+
+CREATE TABLE `Employee` (
+  `Employee Id` <type>,
+  `First Name` <type>,
+  `Last Name` <type>,
+  `Title` <type>,
+  `Type` <type>,
+  `IsActive` <type>
+);
+
+CREATE TABLE `Attachment` (
+  `Attachment Id` <type>,
+  `File Name` <type>,
+  `Bug Id` <type>
+);
+
+CREATE TABLE `Program` (
+  `program Id` <type>,
+  `program version` <type>,
+  `program release` <type>,
+  `Program Name` <type>
+);
+
+CREATE TABLE `Bug` (
+  `Bug Id` <type>,
+  `Program` <type>,
+  `Report Type` <type>,
+  `Severity` <type>,
+  `Functional Area` <type>,
+  `Assigned To` <type>,
+  `Description` <type>,
+  `Status` <type>,
+  `Priority` <type>,
+  `Resolution` <type>,
+  `Reported By` <type>,
+  `Report Date` <type>,
+  `Resolved By` <type>
+);
+

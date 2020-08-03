@@ -1,0 +1,35 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Add Employees</title>
+        <script>
+                
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <form action="page2.php" method="post">
+                <label>Add an Employee </label>
+                <br>
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Enter name of employee">
+                <br>
+                <label>User Name</label>
+                <input type="text" name="username" placeholder="Enter Username of employee">
+                <br>
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password">
+                <br>
+                <label>User Level</label>
+                <select id="Userlevels" name="userlevel">
+                   <option value="1">User level 1</option>
+                   <option value="2">User level 2</option>
+                   <option value="3">User level 3</option>
+                </select>
+                <br>
+                <input type="submit">
+                <button name="cancel" onclick="cancel">Cancel</button>
+            </form>
+        </div>
+    </body>
+</html>

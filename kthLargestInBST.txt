@@ -1,0 +1,17 @@
+void kthLargestUntil(Node *root,int *k){
+    if(root==NULL || *k<=0)
+        return;
+    kthLargestUntil(root->right,k);
+    *k=*k-1;
+    if(*k==0){
+        cout<<root->key<<endl;
+        return;
+    }
+    kthLargestUntil(root->left,k);
+}
+void kthLargest(Node *root, int k)
+{
+    //Your code here
+    
+   kthLargestUntil(root,&k);
+}

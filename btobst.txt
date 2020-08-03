@@ -1,0 +1,37 @@
+int countTree(Node *root){
+    if(root==NULL)
+        return 0;
+    return 1+countTree(root->left)+countTree(root->right);
+}
+void storeInorder(int arr[],Node *root,int *index){
+    if(root==NULL)
+        return;
+    storeInorder(arr,root->left,index);
+    arr[*index]=root->data;
+    (*index)++;
+    storeInorder(arr,root->right,index);
+}
+int compare(const void *a,const void *b){
+    return (*(int*)a-*(int*)b);
+}
+void convertBtoBst(int arr[],Node* root,int *index){
+    if(root==NULL)
+        return;
+    convertBtoBst(arr,root->left,index);
+    root->data=arr[*index];
+    (*index)++;
+    convertBtoBst(arr,root->right,index);
+}
+Node *binaryTreeToBST (Node *root)
+{
+//Your code here
+int i;
+int count=countTree(root);
+int arr[count];
+i=0;
+storeInorder(arr,root,&i);
+qsort(arr,count,sizeof(arr[0]),compare);
+i=0;
+convertBtoBst(arr,root,&i);
+return root;
+}

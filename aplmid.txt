@@ -1,0 +1,14 @@
+cobol
+01 MyData
+	05 Firstname PIC x(30);
+	01 lastname pic x(30);
+
+
+	..
+	05 age pic 9
+	05 deptcode pic 9
+
+
+Automatic varialbe: even a byte is pushed .. a 32 bit is allocated in stack.
+
+fully quality reference - record of record of record.. or class of class of class.
